@@ -61,10 +61,10 @@ const buttonReset = document.getElementById("reset");
 
 const array = document.getElementById("your-array");
 
-const mapDoubleRadio = document.getElementById("map1").value;
-const mapMultiplyRadio = document.getElementById("map2").value;
-const filterRadio = document.getElementById("filter").value;
-const reduceRadio = document.getElementById("reduce").value;
+const mapDoubleRadio = document.getElementById("map1");
+const mapMultiplyRadio = document.getElementById("map2");
+const filterRadio = document.getElementById("filter");
+const reduceRadio = document.getElementById("reduce");
 
 const sumbit = document.getElementById("output-button");
 const result = document.getElementById("output");
@@ -77,7 +77,6 @@ function addArr() {
   let inputArr = document.getElementById("input-array").value;
   newArr = inputArr.split(",").map(str => Number(str));
   array.innerText = "[" + newArr + "]";
-  console.log(newArr)
   return newArr;
 }
 
@@ -85,7 +84,6 @@ function pushNumToArr() {
     let inputNum = Number(document.getElementById("input-numbers").value);
     newArr.push(inputNum);
     array.innerText = "[" + newArr.join(', ') + "]";
-    console.log(newArr);
     return newArr;
 }
 
@@ -94,7 +92,7 @@ function resetArr() {
      newArr.length = 0;
      document.getElementById("input-numbers").value = 0;
      document.getElementById("input-array").value = 0;
-     console.log(newArr);
+     document.getElementById("output").innerText = " "
      return newArr;
 }
 
@@ -103,4 +101,26 @@ buttonAddNum.addEventListener("click", pushNumToArr);
 buttonReset.addEventListener("click", resetArr);
 
 /*---------------- add methods ---------------*/
+
+function addMethod() {
+  let outcome;
+  if (mapDoubleRadio.checked) {
+    outcome = newArr.map(doubleNum);
+    result.innerText = "[" + outcome.join(', ') + "]";
+  }
+  else if (mapMultiplyRadio.checked) {
+    outcome = newArr.map(multiply);
+    result.innerText = "[" + outcome.join(', ') + "]";
+  }
+  else if (filterRadio.checked) {
+    outcome = newArr.filter(divideByTwo);
+    result.innerText = "[" + outcome.join(', ') + "]";
+  }
+  else if (reduceRadio.checked) {
+    outcome = newArr.reduce(sumArr);
+    result.innerText = "[" + outcome + "]";
+  }
+}
+
+sumbit.addEventListener("click", addMethod);
 
