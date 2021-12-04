@@ -6,34 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Array methods</title>
 </head>
 
 <body>
-    <input type="text" id="input-array">
-    <button id="submit-array">Submit array</button>
-    <br>
-    <input type="number" id="input-numbers">
-    <button id="submit-numbers">Add number to array</button>
+    <h2>Array methods</h2>
+    <div id="add-array-number">
+        <div class="input-fields">
+            <fieldset>
+                <legend>Give your array of numbers:</legend>
+                <input type="text" class="inputs" id="input-array"> <br>
+                <button id="submit-array">Submit array</button>
+            </fieldset>
+        </div>
+        <div class="input-fields">
+            <fieldset>
+                <legend>Add a single number to your array:</legend>
+                <input type="number" class="inputs" id="input-numbers"> <br>
+                <button id="submit-numbers">Add number</button> <br>
+            </fieldset>
+        </div>
+    </div>
+
+    <p id="your-array" class="array">[ ]</p>
+
     <button id="reset">Reset</button>
 
-    <p id="your-array"> </p>
-
-    <input type="radio" name="method" id="map1">
-    <label for="map1" class="radio-label">Map method - double</label>
-
-    <input type="radio" name="method" id="map2">
-    <label for="map2" class="radio-label">Map method - multiply</label>
-
-    <input type="radio" name="method" id="filter">
-    <label for="filter" class="radio-label">Filter method - divisible by two</label>
-
-    <input type="radio" name="method" id="reduce">
-    <label for="reduce" class="radio-label">Reduce method - sum of array</label>
+    <fieldset id="choose-method">
+        <legend>Choose a method:</legend>
+        <ul>
+            <li>
+                <input type="radio" name="method" id="map1">
+                <label for="map1" class="radio-label">Map method - duplicates number</label>
+            </li>
+            <li>
+                <input type="radio" name="method" id="map2">
+                <label for="map2" class="radio-label">Map method - multiplies number by its index</label>
+            </li>
+            <li>
+                <input type="radio" name="method" id="filter">
+                <label for="filter" class="radio-label">Filter method - numbers divisible by two</label>
+            </li>
+            <li>
+                <input type="radio" name="method" id="reduce">
+                <label for="reduce" class="radio-label">Reduce method - sum of array</label>
+            </li>
+        </ul>
+    </fieldset>
 
     <button id="output-button">Show result</button>
 
-    <p id="output"></p>
+    <p id="output" class="array"></p>
 
 
     <script src="script.js"></script>

@@ -88,7 +88,7 @@ function pushNumToArr() {
 }
 
 function resetArr() {
-     array.innerHTML = " ";
+     array.innerHTML = "[ ]";
      newArr.length = 0;
      document.getElementById("input-numbers").value = 0;
      document.getElementById("input-array").value = 0;
